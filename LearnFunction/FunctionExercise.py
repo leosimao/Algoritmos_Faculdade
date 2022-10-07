@@ -31,23 +31,25 @@ def PrcTabuada(a):
 #6. Crie um procedimento que recebe um vetor de números inteiros por parâmetro. Esta função deve chamar imprimirVetor() e vai imprimir na tela todos os números do vetor informado. 
 def PrcImpVetor(vtr):
     print("Imprimindo vetor")
-    sleep(0.2)
     for i in range(0, len(vtr)):
         print(vtr[i], " ", end = "")
         sleep(0.2)
 
 #7. Faça um procedimento chamado encontrarMaior() que recebe um vetor de números inteiros como parâmetro, procure e informe somente o maior valor do vetor.
-def PrcEncMaior(vtr):
-    maior = 0
+def PrcEncMaiorVetor(vtr):
+    maior = vtr[1]
     for i in range(0, len(vtr)):
         if(vtr[i] > maior):
             maior = vtr[i]
-    print("O vetor criado foi: ")
     print()
-    for j in range(0, len(vtr)):
-        print(vtr[i], " ", end = "" )
-    print()
-    print(f"O maior número encontrado nesse vetor é {maior}")
+    print(f"O maior valor encontrado nesse vetor foi {maior}")
+
+def PrcEncMenorVetor(vtr):
+    menor = vtr[1]
+    for i in range(0, len(vtr)):
+        if(vtr[i] < menor):
+            menor = vtr[i]
+    print(f"O menor valor encontrado no vetor foi o {menor}")
 
 
 vl1 = int(input("Digite o primeiro valor para somar: "))
@@ -72,13 +74,11 @@ v = [0] * rd.randint(10, 20)
 for j in range(0, len(v)):
     v[j] = rd.randint(0, 200)
 
-sleep(0.1)
+sleep(0.2)
 
 PrcImpVetor(v)
 print()
-
-#def 7
-vetor = [0] * rd.randint(10, 15)
-for i in range(0, len(vetor)):
-    vetor[i] = rd.randint(1, 100)
-PrcEncMaior(vetor)
+sleep(0.2)
+#def 7 e exercicio 3
+PrcEncMaiorVetor(v)
+PrcEncMenorVetor(v)
